@@ -9,8 +9,8 @@ describe "patching nested value" do
 
     describe "#nested_value_for" do
       it "calls nested value" do
-        test_hash.should_receive(:nested_value).with(test_hash, access_chain)
-        test_hash.nested_value_for(access_chain)
+        test_hash.should_receive(:nested_value).with(test_hash, *access_chain)
+        test_hash.nested_value_for(*access_chain)
       end
     end
   end
@@ -20,8 +20,8 @@ describe "patching nested value" do
 
     describe "#nested_value_for" do
       it "calls nested value" do
-        test_hash.should_receive(:nested_value).with(test_hash, access_chain)
-        test_hash.nested_value_for(access_chain)
+        test_hash.should_receive(:nested_value).with(test_hash, *access_chain)
+        test_hash.nested_value_for(*access_chain)
       end
     end
   end

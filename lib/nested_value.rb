@@ -1,5 +1,5 @@
 module NestedValue
-  def nested_value(nested_data_structure, ordered_list_of_keys)
+  def nested_value(nested_data_structure, *ordered_list_of_keys)
     ordered_list_of_keys.inject(nested_data_structure) do |remaining_value, key|
       return unless can_be_read?(remaining_value)
       remaining_value = access_value(remaining_value, key)
@@ -13,6 +13,12 @@ module NestedValue
   end
 
   def access_value(remaining_value, key)
-    remaining_value[key] || remaining_value[key.to_s] || remaining_value[key.to_sym]
+    return if remaining_value.kind_of?(Array) && !key.kind_of?(Integer)
+    remaining_value[key] ||
+      if key.kind_of?(String)
+        remaining_value[key.to_sym]
+      else
+        remaining_value[key.to_s]
+      end
   end
 end
