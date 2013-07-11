@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.date        = '2013-06-28'
   gem.summary     = 'Access values hidden in deeply nested data structures with ease and without fear.'
   gem.description = 'Access values hidden in deeply nested data structures with ease and without fear.'
-  gem.authors     = ['Dave Moore']
+  gem.authors     = ['Dave Moore', 'Trace Wax']
   gem.email       = 'cuvuligio@gmail.com'
   gem.files       = Dir['lib/**/*.rb'] + %w(LICENSE README.md)
   gem.homepage    = 'https://github.com/dcmoore/nested_value'
